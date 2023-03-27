@@ -1,0 +1,46 @@
+.topics-modal{
+    position: fixed;
+    left: 10px;
+    top: 40px;
+    height: 250px;
+    z-index: 10;
+    margin: 0 ;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.modal-wrapper{
+    margin: 0 auto;
+}
+
+.modal-topics a{
+    margin-left: 15px;
+    color: black;
+    
+    height:50px;
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .modal-topics i{
+    margin-right: 10px;
+  }
+  .moved{
+    margin-left: 5px;
+  }
+  @media screen and (min-width: 1000px)
+   {
+    .topics-modal{
+        position: fixed;
+        left: 120px;
+    }
+   }
+   @media screen and (min-width:1350px ){
+    .topics-modal{
+        display: none;
+    }
+   }
+   
