@@ -39,7 +39,7 @@ a>*{
  
  @media screen and (max-width: 500px) {
     
-    a:nth-of-type(n+2){
+    .cards:nth-of-type(n+2){
         display: none;
     }
     
@@ -54,9 +54,7 @@ a>*{
 
   @media screen and (min-width: 500px) and (max-width: 700px){
     
-    a:nth-of-type(n+3){
-        display: none;
-    }
+    
     .cards{
         flex-grow: 1;
         
@@ -69,6 +67,6 @@ a>*{
 
     .cards:nth-of-type(n+4){
         display: none;
-    }
-    
+    } 
+     
   } 

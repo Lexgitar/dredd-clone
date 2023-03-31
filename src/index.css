@@ -18,13 +18,9 @@ code {
 
 .layout{
   width: 100%;
-
-
 }
 
-@media screen and (max-width: 600px){
- 
-}
+
 
 /* navbar */
 
@@ -43,15 +39,17 @@ nav input{
   border-radius: 10px;
   width:90%;
 }
-nav > div:nth-child(-n+3){
-  padding-left: 5px;
-}
+
 .user{
   text-align: end;
   padding-right: 10px;
 }
 nav i:hover{
 transform: scale(1.1);
+}
+nav div{
+  
+  color: black;
 }
 nav i{
   transition: 0.2s;
@@ -63,18 +61,13 @@ nav i{
 }
 .menu , .popular{
   display: none;
+ 
 }
 
 /* main */
 
 main{
-  /* border: 1px solid blue; */
-  max-width: 1200px;
-  /* background-color:rgb(216, 228, 228); */
-  /* display: grid; */
-  /* grid-area: right; */
-  margin: 0 auto;
-  
+   
 }
 
  @media screen and (max-width: 1340px) {
@@ -83,7 +76,7 @@ main{
   grid-template-columns: 1fr 1fr 1fr 4fr 1fr;
 }
   .menu, .popular{
-    display: inline;
+    display: inline-block;
   }
 
   .topics{
@@ -99,3 +92,8 @@ main{
  
 }
 
+.mock{
+  width:1000px;
+ height: 700px;
+  background-color: red;
+}
