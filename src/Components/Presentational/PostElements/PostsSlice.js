@@ -1,7 +1,15 @@
 import { createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
 
-const postsUrl = 'https://www.reddit.com/r/gaming.json';
+
+
+
+
+
+
+
+
+
 
 //const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts/?_limit=10';
 
@@ -9,25 +17,38 @@ const initialState = {
     posts: [],
     status: 'idle',
     error:null,
+    
+    
    
 }
-
-export const fetchPosts = createAsyncThunk('posts/fetchPosts', async ()=>{
-    const response = await axios.get(postsUrl)
-    return response.data
-})
+//import link
 
 
-const PostsSlice = createSlice({
+const postsUrl = 'https://www.reddit.com/r/popular.json';
+
+export const fetchPosts = createAsyncThunk('posts/fetchPosts', 
+    async (arg)=>{
+    if (arg) {const response = await axios.get(arg)
+     return response.data  
+     } else {const response = await axios.get(postsUrl)
+        return response.data}
+    
+}) 
+
+
+export const PostsSlice = createSlice({
     name:'posts',
     initialState,
     reducers:{
-        toggleUp : (state)=>{
-              state.rating+=1;
+        filterByHot: (state) =>{
+            state.posts = state.posts.slice().sort((a,b)=> a.data.upvote_ratio < b.data.upvote_ratio)
         },
-        toggleDown:(arg)=>{
-            arg-=1 ;
-       },
+        filterByNew: (state) =>{
+            state.posts = state.posts.slice().sort((a,b)=> a.data.created < b.data.created)
+        },
+        filterByTop: (state) =>{
+            state.posts = state.posts.sort((a,b)=> a.data.ups < b.data.ups)
+        },
     },
     extraReducers(builder){
         builder
@@ -36,7 +57,8 @@ const PostsSlice = createSlice({
         })
         .addCase(fetchPosts.fulfilled, (state,action)=>{
             state.status = 'succeeded'
-            state.posts = action.payload
+            state.posts = action.payload.data.children
+            //state.posts = action.payload.data.children.slice().sort((a,b)=> a.data.created < b.data.created)
             
         })
         .addCase(fetchPosts.rejected, (state,action)=>{
@@ -47,9 +69,13 @@ const PostsSlice = createSlice({
 })
 
 export default PostsSlice.reducer
-export const selectAllPosts = (state)=> state.posts.posts.data
+export const selectAllPosts = (state)=> state.posts.posts
 export const selectStatus = (state)=> state.posts.status
 export const selectError = (state)=> state.posts.error
-export const {toggleUp, toggleDown} = PostsSlice.actions
+export const { filterByHot, filterByNew, filterByTop} = PostsSlice.actions
+
+
+
+
 
 

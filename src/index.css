@@ -97,3 +97,7 @@ main{
  height: 700px;
   background-color: red;
 }
+
+.logo{
+  margin-left: 5px;
+}

@@ -9,7 +9,8 @@ function PostTile({
     postImgUrl,
     postAuthor,
     timeAgo,
-    numComments
+    numComments,
+    
 }) {
      const [rating, setRating] = useState(postScore)   
     
@@ -21,10 +22,10 @@ function PostTile({
     return   (
            
             <div className='wrapper' key={postId} >
-                 
+                
                 <div className='post-tile'>
                     <div className="rating">
-                        <i onClick={()=>{handleVote(rating)}}  className="fa-solid fa-arrow-turn-up"></i>
+                        <i onClick={()=>{handleVote(postId)}}  className="fa-solid fa-arrow-turn-up"></i>
                         <h6>{rating}</h6>
                         <i onClick={()=>{handleVote()}}  className="fa-solid fa-arrow-turn-down "></i>
                     </div>
