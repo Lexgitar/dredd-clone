@@ -1,15 +1,14 @@
 import React from 'react'
-import { useEffect } from 'react'
+//import { useEffect } from 'react'
 import {  selectAllPosts,  selectStatus } from './PostElements/PostsSlice'
 import moment from 'moment/moment'
 import PostTile from './PostElements/PostTile'
-import FilterTile from './Filters/FilterTile'
-import TrendingContainer from './Trending/TrendingContainer'
+//import FilterTile from './Filters/FilterTile'
+//import TrendingContainer from './Trending/TrendingContainer'
 
-import { batch } from 'react-redux';
-import { useSelector, useDispatch } from 'react-redux';
-import { selectPopular,selectTrendStatus, selectCelebs, selectMusic, selectTrending  } from './Trending/TrendingSlice'
-import { fetchPopular, fetchMusic, fetchCelebs } from './Trending//TrendingSlice';
+//import { batch } from 'react-redux';
+import { useSelector } from 'react-redux';
+
        
 
 
@@ -21,32 +20,13 @@ function Home() {
     const allPosts = useSelector(selectAllPosts)
     const PostsStatus = useSelector(selectStatus)
 
-    const dispatch = useDispatch()
-    const popular = useSelector(selectPopular)
-    const music = useSelector(selectMusic)
-    const celebs = useSelector(selectCelebs)
-    const trendingStatus = useSelector(selectTrendStatus)
-    const allTrends = useSelector(selectTrending)
-    const allThree =  popular !==null && music.slice().concat(celebs.slice(), popular.slice()) 
+    //const dispatch = useDispatch()
+   
     //const allThree = [music.concat(celebs, popular) ]
 
 
 
-    useEffect(()=>{
-        
-
-      batch(() => {
-          //dispatch(fetchPopular()).then(dispatch(fetchMusic())).then(dispatch(fetchCelebs()))
-         dispatch(fetchPopular())
-          dispatch(fetchMusic())
-          dispatch(fetchCelebs())
-        })
-
-        return()=>{
-          // console.log('layout2')
-       }
-         
-  },[dispatch])
+    
 
 
    
@@ -66,8 +46,8 @@ function Home() {
         <title>Dreddit | Home</title>
         {/* {console.log(allThree)}
         {console.log(allPosts)} */}
-        <TrendingContainer allThree ={allThree} />  
-          <FilterTile/> 
+        {/* <TrendingContainer allThree ={allThree} />  
+          <FilterTile/>  */}
       
      
      { allPosts !== 'undefined' &&

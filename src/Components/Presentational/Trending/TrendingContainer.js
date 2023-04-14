@@ -15,11 +15,7 @@ function TrendingContainer({allThree}) {
     
 
     
- if (!ranked.length){
-    return ( 
-        <div>Loadingzz..</div>
-    )
- }
+ 
 
 
 

@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { batch } from 'react-redux'
 import './layout-section.css'
 import { NavLink, Outlet } from 'react-router-dom'
 import Logo from '../Functional/Logo'
@@ -6,7 +7,8 @@ import Popular from '../Functional/Popular'
 import Menu from '../Functional/Menu'
 import SearchBar from '../Functional/SearchBar'
 import Usernotfunctional from '../Functional/Usernotfunctional'
-
+import TrendingContainer from './Trending/TrendingContainer'
+import FilterTile from './Filters/FilterTile'
 import {useSelector,  useDispatch } from 'react-redux'
 import { setCategory } from './Filters/filterSlice'
 
@@ -14,7 +16,8 @@ import { getLink } from './Filters/filterSlice'
 
 import { fetchPosts } from './PostElements/PostsSlice'
 
-
+import { selectPopular, selectCelebs, selectMusic  } from './Trending/TrendingSlice'
+import { fetchPopular, fetchMusic, fetchCelebs } from './Trending//TrendingSlice';
 
 
 
@@ -23,6 +26,13 @@ function Layout() {
     const dispatch = useDispatch()
     
     const linkage = useSelector(getLink)
+
+    const popular = useSelector(selectPopular)
+    const music = useSelector(selectMusic)
+    const celebs = useSelector(selectCelebs)
+    //const trendingStatus = useSelector(selectTrendStatus)
+    //const allTrends = useSelector(selectTrending)
+    const allThree =  popular !==null && music.slice().concat(celebs.slice(), popular.slice()) 
    
     
 
@@ -39,6 +49,25 @@ function Layout() {
             }
         
     }, [ dispatch,linkage])
+
+    useEffect(()=>{
+       
+
+        batch(() => {
+                //dispatch(fetchPopular()).then(dispatch(fetchMusic())).then(dispatch(fetchCelebs()))
+               dispatch(fetchPopular())
+                dispatch(fetchMusic())
+                dispatch(fetchCelebs())
+              })            
+        
+
+        
+  
+          return()=>{
+            // console.log('layout2')
+         }
+           
+    },[dispatch])
 
 
   return (
@@ -81,7 +110,9 @@ function Layout() {
             </section>
             <div className="main-wrapper">
                 <main className='main'>
-                    
+                    {!allThree.length && <> Loading Trending </>}
+                    {allThree.length &&<TrendingContainer allThree={allThree}/>  }
+                    <FilterTile/>
                     <Outlet />
                 </main>
             </div>

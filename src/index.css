@@ -32,7 +32,7 @@ nav{
   grid-template-columns: 1fr 1.5fr 1fr;
   align-items: center;
   position: fixed;
-  background-color: white;
+  background-color:whitesmoke;
   z-index: 100;
 }
 nav input{
@@ -57,7 +57,7 @@ nav i{
 }
 
 .searchbar input:hover{
-  border: 2px solid grey;
+  border: 2px solid lightsteelblue;
 }
 .menu , .popular{
   display: none;
@@ -100,4 +100,9 @@ main{
 
 .logo{
   margin-left: 5px;
+}
+
+.topics a:hover{
+ background-color: lightsteelblue;
+ border-radius: 5px;
 }

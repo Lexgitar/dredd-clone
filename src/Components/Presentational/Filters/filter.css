@@ -19,7 +19,7 @@ h5{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: white;
+    background-color: whitesmoke;
 }
 div i{
     padding-right: 5px;
@@ -28,7 +28,7 @@ div i{
     
     color: darkblue;
     cursor: pointer;
-    background-color: lightgrey;
+    background-color: lightslategrey;
     /* border: 0.5px solid black; */
 }
 .param{
