@@ -53,7 +53,7 @@ function Home() {
     if (PostsStatus !=='succeeded'){
       return (
         <>
-          
+         
           <div>Loading...</div>
          </>
       )
@@ -64,27 +64,26 @@ function Home() {
     <div> 
       
         <title>Dreddit | Home</title>
-        {console.log(allThree)}
-        {console.log(allPosts)}
+        {/* {console.log(allThree)}
+        {console.log(allPosts)} */}
         <TrendingContainer allThree ={allThree} />  
           <FilterTile/> 
       
-     {/* {console.log(allPosts)} */}
+     
      { allPosts !== 'undefined' &&
             allPosts.map(post => 
             <PostTile
-           
-            key={post.data.id}
-                postId={post.data.id}
-                postScore={post.data.score}
-                postTitle={post.data.title}
-                postImgUrl={post.data.url_overridden_by_dest}
-                postThumbnail = {post.data.thumbnail}
-                postAuthor = {post.data.author}
-                timeAgo = {moment.unix(post.data.created_utc).fromNow()}
-                numComments={post.data.num_comments}
+                  key={post.data.id}
+                      postId={post.data.id}
+                      postScore={post.data.score}
+                      postTitle={post.data.title}
+                      postImgUrl={post.data.url_overridden_by_dest}
+                      postThumbnail = {post.data.thumbnail}
+                      postAuthor = {post.data.author}
+                      timeAgo = {moment.unix(post.data.created_utc).fromNow()}
+                      numComments={post.data.num_comments}
             />)
-            
+        
      }
       
     </div>

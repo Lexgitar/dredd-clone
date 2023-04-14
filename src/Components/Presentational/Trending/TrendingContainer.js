@@ -2,14 +2,25 @@
 import './trending.css';
 import { Link } from 'react-router-dom';
 
+
 function TrendingContainer({allThree}) {
 
-   const ranked = allThree.slice().sort((a,b)=>(!a.data.is_video? a.data.ups: a.upvote_ratio ) < (!b.data.is_video? b.data.ups: b.data.upvote_ratio)  )
-   const topFour = ranked.slice(0,4)
    
-  
+   
+ 
+    
+    const ranked = allThree.slice().sort((a,b)=>(!a.data.is_video? a.data.ups: a.upvote_ratio ) < (!b.data.is_video? b.data.ups: b.data.upvote_ratio)); 
+    const topFour = ranked.slice(0,4)
+       
+    
 
-   
+    
+ if (!ranked.length){
+    return ( 
+        <div>Loadingzz..</div>
+    )
+ }
+
 
 
 
@@ -18,12 +29,12 @@ function TrendingContainer({allThree}) {
      
         <div className='trend-c'>
 
-         {console.log(ranked)}
-         {console.log(topFour)}
+         {/* {console.log(ranked)}
+         {console.log(topFour)} */}
          
             <h5>Trending today</h5>
             <div className="images" id='images'>
-                {topFour.map(post =>
+                {topFour.length && topFour.map(post =>
                     <Link  key={post.data.id} to={post.data.url} className="cards" style={{backgroundImage:`url(${post.data.url_overridden_by_dest})`}}>
                     <p>{post.data.title}</p>
                     <h5>{post.data.domain}</h5>
