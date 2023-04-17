@@ -17,7 +17,8 @@
     height: 180px;
     background-position:center;
     background-repeat: no-repeat;
-    background-color: #cccccc;
+    background-color: rgb(216, 228, 228);
+    background-size: cover;
     border: 1px solid black;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 } 

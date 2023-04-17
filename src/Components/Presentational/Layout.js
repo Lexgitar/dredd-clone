@@ -41,7 +41,7 @@ function Layout() {
     }
 
     useEffect (()=>{
-       //console.log('layout')
+       
             dispatch(fetchPosts(linkage))
            
             return()=>{

@@ -2,15 +2,6 @@ import { createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
 
 
-
-
-
-
-
-
-
-
-
 //const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts/?_limit=10';
 
 const initialState = {

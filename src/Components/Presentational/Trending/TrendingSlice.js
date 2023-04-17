@@ -18,7 +18,7 @@ const celebs = 'celebrities';
 
 const apiBase=(arg)=>{
    //return `https://www.reddit.com/r/${arg}.json`}
-   return `https://www.reddit.com/r/${arg}.json?limit=10`}
+   return `https://www.reddit.com/r/${arg}.json`}
 
    export const fetchPopular = createAsyncThunk('trending/fetchPopular', async()=>{
         const response = await axios.get(apiBase(popular))
