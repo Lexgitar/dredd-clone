@@ -40,7 +40,7 @@ function Home() {
           return()=>{
               // console.log('layout2')
           }
-  }, [ linkage])
+  }, [dispatch, linkage])
 
   useEffect(()=>{
       batch(() => {          
@@ -50,11 +50,11 @@ function Home() {
             })            
         return()=>{       
        }         
-  },[])
+  },[dispatch])
   
   const allThree = (popSts==='succeeded' && musSts==='succeeded'&& celSts==='succeeded') &&   music.slice().concat(celebs.slice(), popular.slice()) 
  //test
-  console.log(allPosts !== 'undefined' &&allPosts)
+ // console.log(allPosts !== 'undefined' &&allPosts)
   ///test
   return (
     <div> 

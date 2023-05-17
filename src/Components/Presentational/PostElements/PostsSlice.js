@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+
 
 
 //const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts/?_limit=10';
@@ -9,6 +9,8 @@ const initialState = {
     posts: [],
     status: 'idle',
     error:null,
+    fetchStatus:'idle',
+    fetchError: null
     
 
 }
@@ -30,6 +32,27 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts',
     
 }) 
 
+const apiBase=(arg)=>{
+   
+    return `https://www.reddit.com${arg}.json`
+}
+
+export const fetchComments = createAsyncThunk('comments/fetchComments',
+async({permalink,index})=>{
+    //console.log(permalink)
+   if (permalink ){const response = await fetch(apiBase(permalink))
+    //const json = await response.json()
+   
+    const json = await response.json()
+    const lode =  json[1].data.children
+   // const mappedData = lode.map((comment) =>  comment)
+    //let [destr] = mappedData
+    let [...destr2] = lode
+    //this here 
+    return {comments:[...destr2], index: index}
+    //.map((comment) =>  comment.data.body)
+   
+}})
 
 export const PostsSlice = createSlice({
     name:'posts',
@@ -64,6 +87,19 @@ export const PostsSlice = createSlice({
         .addCase(fetchPosts.rejected, (state,action)=>{
             state.status = 'rejected'
             state.error = action.error.message
+        })
+        .addCase(fetchComments.pending, (state, action)=>{
+            state.fetchStatus = 'loading'
+        })
+        .addCase(fetchComments.fulfilled, (state,action)=>{
+            state.fetchStatus = 'succeeded'
+            state.posts[action.payload.index].comments = action.payload.comments
+              
+        })
+        .addCase(fetchComments.rejected, (state,action)=>{
+            state.fetchStatus = 'rejected'
+            state.fetchError = action.error.message
+            
         })
     }
 })

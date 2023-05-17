@@ -9,7 +9,7 @@ import SearchBar from '../Functional/SearchBar'
 import Usernotfunctional from '../Functional/Usernotfunctional'
 
 import { setCategory } from './Filters/filterSlice'
-import { resetComments } from './Comments/commentsSlice'
+
  import {  useDispatch } from 'react-redux'
 
 
@@ -22,7 +22,7 @@ function Layout() {
     
     const handleChange=(arg)=>{
         dispatch(setCategory(arg))
-        dispatch(resetComments())
+        
     }
 
     

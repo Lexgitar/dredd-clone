@@ -1,17 +1,9 @@
-import React, {useState ,useEffect } from 'react'
+import React from 'react'
 import './comments.css'
-import {  useDispatch } from 'react-redux'
-//import { fetchComments } from './commentsSlice'
-import  { resetComments } from './commentsSlice'
+
 
 
 const Comments = ({name,comment}) => {
- 
-
-
-
-
-
  
   
   return (
@@ -29,8 +21,6 @@ const Comments = ({name,comment}) => {
  }  
 
 
-  
-  
 
 export default Comments
 
