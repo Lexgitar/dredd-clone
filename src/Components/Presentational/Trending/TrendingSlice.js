@@ -4,32 +4,31 @@ import axios from "axios";
 const initialState={
     trending:{
         popular : null,
-        music: 'music',
-        celebs: 'celebs'
+        popSts: 'idle',
+        music: null,
+        musSts:'idle',
+        celebs: null,
+        celSts:'idle'
     },
     status: 'idle',
     error: null,
 }
 
 
-const popular = 'popular';
-const music = 'music';
-const celebs = 'celebrities';
-
 const apiBase=(arg)=>{
    //return `https://www.reddit.com/r/${arg}.json`}
    return `https://www.reddit.com/r/${arg}.json`}
 
-   export const fetchPopular = createAsyncThunk('trending/fetchPopular', async()=>{
-        const response = await axios.get(apiBase(popular))
+   export const fetchPopular = createAsyncThunk('trending/fetchPopular', async(categ)=>{
+        const response = await axios.get(apiBase(categ))
         return response.data
    })
-   export const fetchMusic = createAsyncThunk('trending/fetchMusic', async()=>{
-    const response = await axios.get(apiBase(music))
+   export const fetchMusic = createAsyncThunk('trending/fetchMusic', async(categ)=>{
+    const response = await axios.get(apiBase(categ))
     return response.data
    })
-   export const fetchCelebs = createAsyncThunk('trending/fetchCelebs', async()=>{
-    const response = await axios.get(apiBase(celebs))
+   export const fetchCelebs = createAsyncThunk('trending/fetchCelebs', async(categ)=>{
+    const response = await axios.get(apiBase(categ))
     return response.data
    })
 
@@ -44,7 +43,7 @@ export const TrendingSlice = createSlice({
             state.status = 'loading'
         })
         .addCase(fetchPopular.fulfilled, (state,action)=>{
-            state.status = 'succeeded'
+            state.trending.popSts = 'succeeded'
             state.trending.popular = action.payload.data.children
         })
         .addCase(fetchPopular.rejected, (state,action)=>{
@@ -55,7 +54,7 @@ export const TrendingSlice = createSlice({
             state.status = 'loading'
         })
         .addCase(fetchMusic.fulfilled, (state,action)=>{
-            state.status = 'succeeded'
+            state.trending.musSts = 'succeeded'
             state.trending.music = action.payload.data.children
         })
         .addCase(fetchMusic.rejected, (state,action)=>{
@@ -66,7 +65,7 @@ export const TrendingSlice = createSlice({
             state.status = 'loading'
         })
         .addCase(fetchCelebs.fulfilled, (state,action)=>{
-            state.status = 'succeeded-c'
+            state.trending.celSts = 'succeeded'
             state.trending.celebs = action.payload.data.children
         })
         .addCase(fetchCelebs.rejected, (state,action)=>{
@@ -82,3 +81,8 @@ export const selectPopular = (state)=> state.trending.trending.popular
 export const selectMusic = (state)=> state.trending.trending.music
 export const selectCelebs = (state)=> state.trending.trending.celebs
 export const selectTrendStatus = (state)=> state.trending.status
+
+export const selectPopSts = (state)=> state.trending.trending.popSts
+export const selectMusSts = (state)=> state.trending.trending.musSts
+export const selectCelSts = (state)=> state.trending.trending.celSts
+

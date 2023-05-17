@@ -4,6 +4,11 @@
    margin: 0 auto;
     
 }
+
+.cards:hover{
+    box-shadow:  1px 1px 4px #aaaaaa,
+             -1px -1px 4px #4e4b4b;
+}
 .trend-c h5{
     margin:0;
     padding: 10px;
@@ -75,3 +80,13 @@ a>*{
     } 
      
   } 
+
+  .cards h5{
+    background-color: rgba(245, 234, 234, 0.4);
+    color :lightsteelblue;
+    border-radius: 10px;
+    width: 90%;
+    height: auto;
+    margin:  0 auto;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }

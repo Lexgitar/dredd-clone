@@ -1,0 +1,10 @@
+.commentTile{
+    width: 90%;
+}
+
+.commentCard{
+    width: 70%;
+    height: auto;
+    border: 1px solid red;
+    margin: 0 auto;
+}

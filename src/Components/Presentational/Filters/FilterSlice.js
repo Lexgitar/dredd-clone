@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+;
 
 const initialState={
     category: 'r/popular',
@@ -12,6 +13,7 @@ export const FilterSlice= createSlice({
     initialState,
     reducers:{
         setCategory :(state,action)=>{
+            
             state.category =  action.payload
             state.link = `https://www.reddit.com/${state.category}.json?limit=10`
         }
