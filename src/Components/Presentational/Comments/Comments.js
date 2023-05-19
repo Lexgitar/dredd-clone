@@ -1,20 +1,24 @@
 import React from 'react'
 import './comments.css'
+import moment from 'moment/moment'
 
 
 
-const Comments = ({name,comment}) => {
+const Comments = ({comment}) => {
  
   
   return (
-    <div className='commentCard'>
-       <h4>author:{comment.data.author}</h4>
-       <h5>name:{name}</h5>
-       <h5>time ago</h5>
-       <p>body:{comment.data.body}</p>
-       <p>parent_id:{comment.data.parent_id}</p>
+    <div className='commDiv'>
+      <div className='commentCard'>
+        <div className='cominfo'>
+          <h4>{comment.data.author}</h4>
+          <p>{moment.unix(comment.data.created_utc).fromNow()}</p>
+        </div>
+        <p className='com'>{comment.data.body}</p>
         
-        
+          
+          
+      </div>
     </div>
   )
   

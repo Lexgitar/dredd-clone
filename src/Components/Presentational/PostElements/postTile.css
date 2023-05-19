@@ -1,8 +1,13 @@
 .wrapper{
     /* border: 1px solid red; */
-    margin:15px;
+    max-width: 90%;
+    margin:15px auto;
     border-radius: 5px;
-    background-color: rgb(216, 228, 228);
+    background-color: #d8e4e4;
+    display: block;
+    padding-bottom: 5px;
+    
+    
 }
 .wrapper:hover{
     
@@ -93,6 +98,5 @@ img{
     text-align: center;
     
 }
-.commentTile{
-    width: 90%;
-}
+
+

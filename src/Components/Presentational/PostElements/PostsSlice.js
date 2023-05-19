@@ -10,7 +10,8 @@ const initialState = {
     status: 'idle',
     error:null,
     fetchStatus:'idle',
-    fetchError: null
+    fetchError: null,
+    term:''
     
 
 }
@@ -58,6 +59,9 @@ export const PostsSlice = createSlice({
     name:'posts',
     initialState,
     reducers:{
+        termChange: (state, action) =>{
+            state.term = action.payload
+        },
         filterByHot: (state) =>{
             state.posts = state.posts.slice().sort((a,b)=> a.data.upvote_ratio < b.data.upvote_ratio)
         },
@@ -67,9 +71,7 @@ export const PostsSlice = createSlice({
         filterByTop: (state) =>{
             state.posts = state.posts.sort((a,b)=> a.data.ups < b.data.ups)
         },
-        addComments:(state,action)=>{
-            state.posts[action.payload.index].comments = action.payload.comments
-        }
+        
        
     },
     extraReducers(builder){
@@ -105,11 +107,13 @@ export const PostsSlice = createSlice({
 })
 
 export default PostsSlice.reducer
-export const selectAllPosts = (state)=> state.posts.posts
+export const selectAllPosts = (state)=> state.posts.term === '' ? state.posts.posts : state.posts.posts.filter((post) =>
+post.data.title.toLowerCase().includes(state.posts.term.toLowerCase()));
 export const selectStatus = (state)=> state.posts.status
 export const selectError = (state)=> state.posts.error
+export const selectTerm = (state)=> state.posts.term
 
-export const { filterByHot, filterByNew, filterByTop,addComments } = PostsSlice.actions
+export const { termChange,filterByHot, filterByNew, filterByTop} = PostsSlice.actions
 
 
 

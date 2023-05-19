@@ -32,9 +32,11 @@ function PostTile({
     const handleComments = ()=>{
     
          check?setCheck(false): setCheck(true)
+         
     }
  
     const renderComments=(name)=>{
+       
   
        if(comms.length){
         return comms.map((comment) =>   <Comments
@@ -68,8 +70,8 @@ function PostTile({
                     </div>
                     <div className="pic">
                        <h4>{postTitle}</h4>
-                       <h4>name:{name}</h4>
-                       <h4>index:{index}</h4>
+                       {/* <h4>name:{name}</h4>
+                       <h4>index:{index}</h4> */}
                       
                         <img src={postImgUrl} alt="" /> 
                         <div className='aux'>       
@@ -82,9 +84,12 @@ function PostTile({
                             </div>
                         </div> 
                     </div>
-                
+                    
                 </div>
                 {(check && comms.length>0)  && renderComments(name)}
+                    
+                
+                
                 
                 
             </div>

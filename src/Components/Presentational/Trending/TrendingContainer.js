@@ -19,7 +19,7 @@ function TrendingContainer({allThree}) {
             <h5>Trending today</h5>
             <div className="images" id='images'>
                 {topFour.length === 4 && topFour.map(post =>
-                    <Link  key={post.data.id} to={post.data.url} className="cards" style={{backgroundImage:`url(${post.data.url_overridden_by_dest})`}}>
+                    <Link  key={post.data.id} to={post.data.url} className="cards" style={{backgroundImage:`url(${post.data.url})`}}>
                     <p>{post.data.title.substring(0,50).concat(' ...')}</p>
                     <h5>{post.data.author}</h5>
                     {/* {console.log(ranked)} */}

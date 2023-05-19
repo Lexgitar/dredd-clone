@@ -58,6 +58,7 @@ nav i{
 
 .searchbar input:hover{
   border: 2px solid lightsteelblue;
+
 }
 .menu , .popular{
   display: none;
@@ -105,4 +106,12 @@ main{
 .topics a:hover{
  background-color: lightsteelblue;
  border-radius: 5px;
+ border-left: 2px solid blue;
 }
+
+.activ{
+  background-color: lightsteelblue;
+  border-radius: 5px;
+  border-left: 2px solid blue;
+}
+

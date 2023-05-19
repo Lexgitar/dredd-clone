@@ -65,7 +65,7 @@ function Home() {
                    
                     <FilterTile/>
      
-     { allPosts !== 'undefined' &&
+     { (allPosts !== 'undefined' && allPosts.length) &&
             allPosts.map((post, index )=> 
             <PostTile
                   key={post.data.id}
@@ -73,7 +73,7 @@ function Home() {
                       name={post.data.name}
                       postScore={post.data.score}
                       postTitle={post.data.title}
-                      postImgUrl={post.data.url_overridden_by_dest}
+                      postImgUrl={post.data.url}
                       postThumbnail = {post.data.thumbnail}
                       postAuthor = {post.data.author}
                       timeAgo = {moment.unix(post.data.created_utc).fromNow()}

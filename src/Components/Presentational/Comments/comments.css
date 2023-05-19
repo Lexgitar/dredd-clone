@@ -1,10 +1,32 @@
-.commentTile{
-    width: 90%;
-}
 
-.commentCard{
-    width: 70%;
-    height: auto;
-    border: 1px solid red;
+.commDiv{
+    max-width: 46vw;
+    margin: 10px auto ;
+    background-color: hsl(200, 34%, 84%);
+    padding-bottom: 10px;
+    border: 1px solid rgb(1, 228, 228,0.2);
+    border-radius: 5px;
+}
+.commentCard:hover{ 
+    
+    box-shadow:  2px -5px 5px #b8d2d2,
+             -1px 10px 80px #d8e4e4;
+
+}
+@media screen and (min-width: 400px) and (max-width: 1250px){
+    
+    .commDiv{
+        max-width: 78vw;       
+    }    
+  }
+  .commentCard .com{ 
+    font-style: italic;
     margin: 0 auto;
+    padding: 0 15px;
+}
+.cominfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px ;
 }

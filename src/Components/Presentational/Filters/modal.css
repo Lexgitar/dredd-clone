@@ -25,9 +25,17 @@
     align-items: center;
   }
   
+
+  .modal-topics a:hover{
+    background-color: rgb(230, 245, 245);
+ border-radius: 5px;
+    border-left: 2px solid blue;
+  }
   .modal-topics i{
     margin-right: 10px;
   }
+
+
   .moved{
     margin-left: 5px;
   }
