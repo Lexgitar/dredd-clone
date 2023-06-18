@@ -17,8 +17,19 @@
     
     .commDiv{
         max-width: 78vw;       
-    }    
+    }   
+    .commDiv p{
+
+    } 
   }
+
+  @media screen and (max-width: 400px){
+    
+    .commDiv{
+        max-width: 79vw;       
+    }   
+}
+
   .commentCard .com{ 
     font-style: italic;
     margin: 0 auto;
