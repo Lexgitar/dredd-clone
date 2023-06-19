@@ -48,7 +48,7 @@ const handleClassChange=(arg)=>{
     <div className='filter' > 
         <h5>Popular posts</h5>
         <div className="fcard">        
-          <div  className={one}  onClick={()=>{dispatch(filterByHot());} } ><i className="fa-solid fa-fire-flame-curved"></i>Hot</div>
+          <div  className={one}  onClick={()=>{dispatch(filterByHot());handleClassChange('one')} } ><i className="fa-solid fa-fire-flame-curved"></i>Hot</div>
             <div className={two} onClick={()=> {dispatch(filterByNew()); handleClassChange('two')}}  ><i className="fa-solid fa-bolt"></i>New</div>
             <div className={three} onClick={()=> {dispatch(filterByTop()); handleClassChange('three')}}  ><i className="fa-solid fa-arrow-up"></i>Top</div>
         </div>
