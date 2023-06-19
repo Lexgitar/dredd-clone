@@ -32,6 +32,7 @@ function Layout() {
     useEffect(()=>{
         setArgo(category)
         argo===category && setClassName('activ')
+        // eslint-disable-next-line
     },[category])
 
   return (

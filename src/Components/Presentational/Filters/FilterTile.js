@@ -13,6 +13,7 @@ function FilterTile() {
   const p = 'param'
   const a = 'param actives'
 const dispatch = useDispatch()
+// eslint-disable-next-line
 const [start, setStart]=useState('param')
 const [one, setOne]=useState(start)
 const [two, setTwo]=useState(start)
@@ -23,7 +24,7 @@ useEffect(()=>{
  setOne(start)
  setTwo(start)
  setThree(start)
-
+// eslint-disable-next-line
 },[category])
 
 const handleClassChange=(arg)=>{
