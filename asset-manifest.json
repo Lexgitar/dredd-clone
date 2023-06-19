@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/dredd-clone/static/css/main.a047840c.css",
+    "main.js": "/dredd-clone/static/js/main.4910bd95.js",
+    "index.html": "/dredd-clone/index.html",
+    "main.a047840c.css.map": "/dredd-clone/static/css/main.a047840c.css.map",
+    "main.4910bd95.js.map": "/dredd-clone/static/js/main.4910bd95.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a047840c.css",
+    "static/js/main.4910bd95.js"
+  ]
+}
