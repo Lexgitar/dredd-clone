@@ -11,7 +11,7 @@ import Home from "./Components/Presentational/Home";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Layout/>} >
+    <Route path="/presentation" element={<Layout/>} >
       <Route index element={<Home/>} />
       {/* <Route path='/mock' element={<Mock/>} /> */}
     </Route>
