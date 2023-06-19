@@ -21,6 +21,10 @@ h5{
     align-items: center;
     background-color: whitesmoke;
 }
+
+.fcard div{
+    cursor:'pointer'
+}
 div i{
     padding-right: 5px;
 }
