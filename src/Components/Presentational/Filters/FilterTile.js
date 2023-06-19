@@ -2,7 +2,7 @@ import './filter.css'
 //import { NavLink } from 'react-router-dom'
 import { filterByHot, filterByNew, filterByTop } from '../PostElements/PostsSlice'
 import { useDispatch, useSelector } from 'react-redux'
-import { getCategory } from './filterSlice'
+import { getCategory } from './FilterSlice'
 import { useEffect, useState } from 'react'
 
 

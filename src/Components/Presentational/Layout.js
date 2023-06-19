@@ -9,7 +9,7 @@ import Menu from '../Functional/Menu'
 import SearchBar from '../Functional/SearchBar'
 import Usernotfunctional from '../Functional/Usernotfunctional'
 
-import { setCategory, getCategory } from './Filters/filterSlice'
+import { setCategory, getCategory } from './Filters/FilterSlice'
 
  import {  useDispatch, useSelector } from 'react-redux'
 

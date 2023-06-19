@@ -1,5 +1,5 @@
 import React,{ useEffect, useState } from 'react'
-import { getCategory } from '../Presentational/Filters/filterSlice'
+import { getCategory } from '../Presentational/Filters/FilterSlice'
 import { termChange } from '../Presentational/PostElements/PostsSlice'
 import { useSelector, useDispatch } from 'react-redux'
 

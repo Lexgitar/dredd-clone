@@ -1,6 +1,6 @@
 
 import { useDispatch } from 'react-redux'
-import { setCategory } from '../Presentational/Filters/filterSlice'
+import { setCategory } from '../Presentational/Filters/FilterSlice'
 
 
 

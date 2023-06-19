@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import PostsReducer from '../Components/Presentational/PostElements/PostsSlice'
-import FilterReducer from "../Components/Presentational/Filters/filterSlice";
+import FilterReducer from "../Components/Presentational/Filters/FilterSlice";
 import TrendingReducer from "../Components/Presentational/Trending/TrendingSlice";
 //import  CommentsReducer  from "../Components/Presentational/Comments/commentsSlice";
 //import mockReducer from "../Components/Presentational/Mock/mockSlice";

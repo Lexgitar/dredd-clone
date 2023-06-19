@@ -2,7 +2,7 @@ import './modal.css'
 
 import { NavLink } from 'react-router-dom'
 import {  useDispatch } from 'react-redux'
-import { setCategory } from './filterSlice'
+import { setCategory } from './FilterSlice'
 
 
 

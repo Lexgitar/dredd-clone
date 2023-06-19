@@ -10,7 +10,7 @@ import TrendingContainer from './Trending/TrendingContainer'
 
 
 
-import { getLink } from './Filters/filterSlice'
+import { getLink } from './Filters/FilterSlice'
 
 import { fetchPosts } from './PostElements/PostsSlice'
 
