@@ -67,6 +67,7 @@ export const PostsSlice = createSlice({
         },
         filterByNew: (state) =>{
             state.posts = state.posts.slice().sort((a,b)=> a.data.created < b.data.created)
+            alert('by new')
         },
         filterByTop: (state) =>{
             state.posts = state.posts.sort((a,b)=> a.data.ups < b.data.ups)
