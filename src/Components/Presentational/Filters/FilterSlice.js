@@ -8,7 +8,7 @@ const initialState={
 
 
 
-export const FilterSlice= createSlice({
+export const filterSlice= createSlice({
     name: 'category',
     initialState,
     reducers:{
@@ -20,7 +20,7 @@ export const FilterSlice= createSlice({
     }
 }) 
 
-export default FilterSlice.reducer
-export const {setCategory} = FilterSlice.actions
+export default filterSlice.reducer
+export const {setCategory} = filterSlice.actions
 export const getCategory = (state)=> state.category.category
 export const getLink = (state)=> state.category.link

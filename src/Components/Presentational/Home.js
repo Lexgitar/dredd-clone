@@ -46,7 +46,7 @@ function Home() {
       batch(() => {          
              dispatch(fetchPopular('popular'))
               dispatch(fetchMusic('music'))
-              dispatch(fetchCelebs('celebrities'))   
+              dispatch(fetchCelebs('animals'))   
             })            
         return()=>{       
        }         
