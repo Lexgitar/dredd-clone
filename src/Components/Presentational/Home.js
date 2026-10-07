@@ -59,7 +59,7 @@ function Home() {
   return (
     <div> 
       
-        <title>Dreddit | Home</title>
+        <title> Dredd-clone | Home </title>
         
       {allThree.length > 3 && <TrendingContainer allThree={allThree}/>  }
                    
